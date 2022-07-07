@@ -1,0 +1,98 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #f2f2f2;
+  --color-text: #5757577e;
+  /* --btn-color: #3866f2; */
+  --btn-color: crimson;
+}
+
+body{
+  background-color: var(--background-color);
+  display: flex;
+  min-height: 100hv;
+  font-family: sans-serif;
+}
+
+.form {
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  padding: 4em 3em;
+  box-shadow: 5px 5px 10px 0 rgb(0 0 0 /30%);
+  border-radius: 10px;
+  text-align: center;
+}
+.form h2{
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.form-container{
+  margin-top: 3em;
+  display: grid;
+  gap: 2em;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input:focus + .form-label, .form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-12px) scale(0.7);
+  transform-origin: left top;
+  color: var(--btn-color);
+}
+
+.form-input{
+  width: 100%;
+  padding: 0.6em 0.3em;
+  font-size: 1em;
+  color: var(--color-text);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.form-label {
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform 0.5s, color 0.3s;
+}
+
+.form-line{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--btn-color);
+  transform: scale(0);
+  transform: left bottom;
+  transition: transform 0.5s;
+}
+
+.form-input:focus ~ .form-line, .form-input:not(:placeholder-shown) ~ .form-line {
+  transform: scale(1);
+}
+
+.form-submit {
+  background-color: var(--btn-color);
+  color: white;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 0.4em 0;
+  border: none;
+  border-radius: 5px;
+}
